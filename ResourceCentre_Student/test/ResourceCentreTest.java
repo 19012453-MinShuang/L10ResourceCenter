@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import org.junit.After;
@@ -88,6 +90,22 @@ public class ResourceCentreTest {
 	public void doLoanCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		//get due Date by adding 14days to today
+		String twoweeksFromToday = LocalDate.now().plusDays(14).format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		// To make sure camcorderlist contains nothing
+		assertEquals(0,camcorderList.size());
+		// add cc1 and cc2 into the camcorderlist , so that it has them now and they can be loaned
+		camcorderList.add(cc1);
+		camcorderList.add(cc2);
+		assertEquals(2,camcorderList.size());
+		// normal condition  to test can the staff loan cc1
+		boolean result1 = ResourceCentre.doLoanCamcorder(camcorderList, cc1.getAssetTag(), twoweeksFromToday );
+		assertTrue("Test staff can loan out cc1 again ", result1);
+		
+		//error condition to test will the unavailable asset be loan? Should be false
+		boolean result2 =ResourceCentre.doLoanCamcorder(camcorderList," cc999999999999", twoweeksFromToday );
+		assertFalse("Test staff can loan out unvailable  asset " , result2);
+		
 		
 	}
 	
@@ -95,6 +113,23 @@ public class ResourceCentreTest {
 	public void doLoanChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		//get due Date by adding 14days to today
+		String twoweeksFromToday = LocalDate.now().plusDays(14).format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+		// To make sure chromebooklist contains nothing
+		assertEquals(0,camcorderList.size());
+		// add cb1 and cb2 into the chromebookList , so that it has them now and they can be loaned
+		chromebookList.add(cb1);
+		chromebookList.add(cb2);
+		assertEquals(2,chromebookList.size());
+		// normal condition  to test can the staff loan cb1
+		boolean result3 = ResourceCentre.doLoanChromebook(chromebookList, cb1.getAssetTag(), twoweeksFromToday );
+		assertTrue("Test staff can loan out cb1 again ", result3);
+		
+		//error condition to test will the unavailable asset be loan? Should be false
+		boolean result4 =ResourceCentre.doLoanChromebook(chromebookList," cb9999999999", twoweeksFromToday );
+		assertFalse("Test staff can loan out unvailable  asset " , result4);
+		
+		
 	}
 	
 	@Test
