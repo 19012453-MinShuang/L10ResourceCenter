@@ -52,12 +52,17 @@ public class ResourceCentreTest {
 	public void addChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
-		//normal
-		ResourceCentre.addChromebook(chromebookList, cb1);
-		assertEquals("Test if that Chromebook arraylist size is 1?", 1, chromebookList.size());
-		//error
+		//Adding a blank object into the list(Error)
+		cb2=new Chromebook("","","");
 		ResourceCentre.addChromebook(chromebookList, cb2);
-		assertEquals("Test if that Chromebook arraylist size is 2?", 0, chromebookList.size());
+		assertEquals("Test if the program add the blank object", cb2, chromebookList.get(0));
+		
+		//Adding 2 item into the null list so list become 2 item inside(Normal)
+		cb2 = new Chromebook("CB0012", "SAMSUNG Chromebook 4+", "Win 10");
+		chromebookList.clear();
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		assertEquals("Test to see if the total number of item in the list becomes 2", 2, chromebookList.size());
 	}
 	
 	@Test
