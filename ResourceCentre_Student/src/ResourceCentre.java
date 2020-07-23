@@ -313,13 +313,28 @@ public class ResourceCentre {
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
 		ResourceCentre.viewAllChromebook(chromebookList);
+
 		String tag = Helper.readString("Enter asset tag");
 		Boolean isReturned = doReturnChromebook(chromebookList, tag);
 
-		if (isReturned == false) {
+		String tag1 = Helper.readString("Enter asset tag"); 
+		Boolean isReturned1 = doReturnChromebook(chromebookList,tag1); 
+		
+		if (isReturned1 == false) {  
+			System.out.println("Invalid asset tag"); 
+			}
+		else { 
+			System.out.println("Camcorder " + tag1 + "returned"); 
+			
+		} //comment
+		// write your code here
+	
+
+
+		if (isReturned1 == false) {
 			System.out.println("Invalid asset tag");
 		} else {
-			System.out.println("Camcorder " + tag + "retuned");
+			System.out.println("Camcorder " + tag1 + "retuned");
 
 		} // comment
 			// write your code here
