@@ -41,7 +41,7 @@ public class ResourceCentreTest {
 		ResourceCentre.addCamcorder(camcorderList, cc1);		
 		assertEquals("Test if that Camcorder arraylist size is 1?", 1, camcorderList.size());
 		
-		//The item just added is as same as the first item of the list
+		///The item just added is as same as the first item of the list
 		assertSame("Test that Camcorder is added same as 1st item of the list?", cc1, camcorderList.get(0));
 		
 		//Add another item. test The size of the list is 2?
@@ -52,6 +52,17 @@ public class ResourceCentreTest {
 	public void addChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		//Adding a blank object into the list(Error)
+		cb2=new Chromebook("","","");
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		assertEquals("Test if the program add the blank object", cb2, chromebookList.get(0));
+		
+		//Adding 2 item into the null list so list become 2 item inside(Normal)
+		cb2 = new Chromebook("CB0012", "SAMSUNG Chromebook 4+", "Win 10");
+		chromebookList.clear();
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		assertEquals("Test to see if the total number of item in the list becomes 2", 2, chromebookList.size());
 	}
 	
 	@Test
