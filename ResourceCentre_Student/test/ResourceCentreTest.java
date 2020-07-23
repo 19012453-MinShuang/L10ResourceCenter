@@ -91,7 +91,7 @@ public class ResourceCentreTest {
 
 		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 
-		// Error
+		// Error test
 		// Error with different variable output
 		String allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
 
