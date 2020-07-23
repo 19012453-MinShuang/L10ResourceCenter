@@ -112,7 +112,7 @@ public class ResourceCentreTest {
 		ResourceCentre.addChromebook(chromebookList, cb1); 
 		cb1.setIsAvailable(true);
 		assertTrue("Test if return item changes availability status", cb1.getIsAvailable()); 
-		
+		 
 		//error
 		boolean check = ResourceCentre.doReturnChromebook (chromebookList,"CB0013"); 
 		assertFalse("Test  if  items in list are returned", check) ; 
