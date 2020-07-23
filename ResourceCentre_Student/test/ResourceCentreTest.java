@@ -104,12 +104,12 @@ public class ResourceCentreTest {
 
 		// Error test
 		// Error with different variable output
-		String allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
+		String allChromebook1 = ResourceCentre.retrieveAllChromebook(chromebookList);
 
-		String testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0011", "Nikon HDSLR", "Yes", "", 40);
-		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0012", "Sony DSC-RX100M7", "Yes", "", 20);
+		String testOutput1 = String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0011", "Nikon HDSLR", "Yes", "", 40);
+		testOutput1 += String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0012", "Sony DSC-RX100M7", "Yes", "", 20);
 		
-		assertEquals("Check that ViewAllChromebooklist", testOutput1, allChromebook1);
+		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 		
 	}
 
