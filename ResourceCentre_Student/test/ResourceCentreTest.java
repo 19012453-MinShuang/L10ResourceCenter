@@ -55,7 +55,7 @@ public class ResourceCentreTest {
 		//Adding a blank object into the list(Error)
 		cb2=new Chromebook("","","");
 		ResourceCentre.addChromebook(chromebookList, cb2);
-		assertEquals("Test if the program add the blank object", cb2, chromebookList.get(0));
+		assertSame("Test if the program add the blank object", cb2, chromebookList.get(0));
 		
 		//Adding 2 item into the null list so list become 2 item inside(Normal)
 		cb2 = new Chromebook("CB0012", "SAMSUNG Chromebook 4+", "Win 10");
