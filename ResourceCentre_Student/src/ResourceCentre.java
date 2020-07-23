@@ -143,7 +143,7 @@ public class ResourceCentre {
 		System.out.println(output);
 	}
 
-	// comment 
+	// comment2 
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
 		String output = "";
 		// write your code here
