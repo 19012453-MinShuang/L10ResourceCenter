@@ -90,7 +90,7 @@ public class ResourceCentreTest {
 		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0012", "Sony DSC-RX100M7", "Yes", "", 20);
 
 		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
-		
+
 		// Error
 		// Error with different variable output
 		String allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
