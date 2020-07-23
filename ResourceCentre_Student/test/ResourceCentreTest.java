@@ -46,7 +46,7 @@ public class ResourceCentreTest {
 		
 		//Add another item. test The size of the list is 2?
 		ResourceCentre.addCamcorder(camcorderList, cc2);
-		assertEquals("Test that Camcorder arraylist size is 2?", 2, camcorderList.size());
+		assertEquals("Test that Camcorder arraylist size is 2?",2, camcorderList.size());
 	}
 	@Test
 	public void addChromebookTest() {
@@ -93,6 +93,24 @@ public class ResourceCentreTest {
 	public void retrieveAllChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		// Normal test
+		//test if the expected output string same as the list of chromebook retrieved from the SourceCentre
+		String allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
+
+		String testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0011", "Nikon HDSLR", "Yes", "", 40);
+		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0012", "Sony DSC-RX100M7", "Yes", "", 20);
+
+		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
+
+		// Error test
+		// Error with different variable output
+		String allChromebook1 = ResourceCentre.retrieveAllChromebook(chromebookList);
+
+		String testOutput1 = String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0011", "Nikon HDSLR", "Yes", "", 40);
+		testOutput1 += String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0012", "Sony DSC-RX100M7", "Yes", "", 20);
+		
+		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
+		
 	}
 
 	@Test
